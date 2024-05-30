@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="main__title main__title--margin">Efektywność energetyczna Twojego domu:</h2>
+<div class="main__rez" id="end">
+  {% if result <= 150 %}
+  <img class="rez__img" src="{{ url_for('static', filename='img/planet_good.svg') }}" alt="Efficient">
+  <span>Twój wynik: {{ result }} kWh</span>
+  <span>Twój dom jest wyjątkowo wydajny, jeśli chodzi o zużycie energii!</span>
+  <span><a href="{{ url_for('form') }}">Link</a></span>
+  {% elif result > 150 and result < 300 %}
+  <img class="rez__img" src="{{ url_for('static', filename='img/planet_medium.svg') }}" alt="Medium Efficiency">
+  <span>Twój wynik: {{ result }} kWh</span>
+  <span>Efektywność energetyczna Twojego domu jest średnia!</span>
+  <span><a href="{{ url_for('form') }}">Link</a></span>
+
+  {% else %}
+  <img class="rez__img" src="{{ url_for('static', filename='img/planet_bad.svg') }}" alt="Inefficient">
+  <span>Twój wynik: {{ result }} kWh</span>
+  <span>Efektywność energetyczna Twojego domu jest poniżej średniej!</span>
+  <span><a href="{{ url_for('form') }}">Link</a></span>
+
+  {% endif %}
+</div>
+{% endblock %}
