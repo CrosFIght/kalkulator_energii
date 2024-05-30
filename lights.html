@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}
+Lampy
+{% endblock %}
+{% block content %}
+<h2 class="main__title">Wybierz, ile lamp znajduje się w Twoim domu:</h2>
+<ul class="list">
+  <li class="list__item">
+    <a href="{{ url_for('electronics', size=size, lights=3) }}">
+      <img class="item__img" src="{{ url_for('static', filename='img/light.svg') }}" alt="light">
+      <span>2-4 lamp</span>
+    </a>
+  </li>
+  <li class="list__item">
+    <a href="{{ url_for('electronics', size=size, lights=7) }}">
+      <img class="item__img" src="{{ url_for('static', filename='img/light.svg') }}" alt="light">
+      <span>4-6 lamp</span>
+    </a>
+  </li>
+  <li class="list__item">
+    <a href="{{ url_for('electronics', size=size, lights=10) }}">
+      <img class="item__img" src="{{ url_for('static', filename='img/light.svg') }}" alt="light">
+      <span>8+ lamp</span>
+    </a>
+  </li>
+</ul>
+{% endblock %}
