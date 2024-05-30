@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="main__title">Podaj liczbę urządzeń korzystających z prądu:</h2>
+<ul class="list">
+  <li class="list__item">
+    <a href="{{ url_for('end', size=size, lights=lights, device=5) }}">
+      <img class="item__img" src="{{ url_for('static', filename='img/battery.svg') }}" alt="battery">
+      <span>3-5 urządzeń</span>
+    </a>
+  </li>
+  <li class="list__item">
+    <a href="{{ url_for('end', size=size, lights=lights, device=7) }}">
+      <img class="item__img" src="{{ url_for('static', filename='img/battery.svg') }}" alt="battery">
+      <span>6-8 urządzeń</span>
+    </a>
+  </li>
+  <li class="list__item">
+    <a href="{{ url_for('end', size=size, lights=lights, device=10) }}">
+      <img class="item__img" src="{{ url_for('static', filename='img/battery.svg') }}" alt="battery">
+      <span>10+ urządzeń</span>
+    </a>
+  </li>
+</ul>
+{% endblock %}
